@@ -1,5 +1,6 @@
 # n4m-bufferloader
 
+[![License](https://img.shields.io/github/license/yuichkun/n4m-bufferloader.svg)](https://github.com/yuichkun/n4m-bufferloader)
 [![CircleCI](https://circleci.com/gh/yuichkun/n4m-bufferloader.svg?style=shield)](https://circleci.com/gh/yuichkun/n4m-bufferloader)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
