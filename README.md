@@ -1,6 +1,6 @@
 # n4m-bufferloader
 
-[![CircleCI](https://circleci.com/gh/yuichkun/n4m-bufferloader.svg?style=svg)](https://circleci.com/gh/yuichkun/n4m-bufferloader)
+[![CircleCI](https://circleci.com/gh/yuichkun/n4m-bufferloader.svg?style=shield)](https://circleci.com/gh/yuichkun/n4m-bufferloader)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 > This n4m plugin enables to download audio from internet, decodes it, and then dumps the data into Max patch, all without EVER writing into files.
