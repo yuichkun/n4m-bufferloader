@@ -1,13 +1,13 @@
 {
-  "name": "buftest",
+  "name": "n4m-bufferloader",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Yuichi Yogo",
+  "license": "MIT",
   "dependencies": {
     "audio-decode": "^1.4.0",
     "axios": "^0.18.0"
