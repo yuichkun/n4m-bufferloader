@@ -1,6 +1,9 @@
 module.exports = {
     "extends": "airbnb-base",
     "globals": {
-        "MaxAPI": true,
+        "MaxAPI": true
     },
+    "env": {
+        "jest": true
+    }
 };

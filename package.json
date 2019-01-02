@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src/",
+    "lint:fix": "eslint --fix src/"
   },
   "author": "Yuichi Yogo",
   "license": "MIT",
@@ -14,10 +16,8 @@
   },
   "devDependencies": {
     "eslint": "^5.11.1",
-    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "jest": "^23.6.0"
+    "eslint-plugin-import": "^2.14.0"
   },
   "jest": {}
 }

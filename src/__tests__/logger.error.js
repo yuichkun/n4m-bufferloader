@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 require('../__mocks__/max-api');
+
 const { MaxAPI } = global;
 const Logger = require('../logger');
 
@@ -7,7 +9,6 @@ MaxAPI.post = jest.fn(MaxAPI.post);
 console.error = jest.fn(console.error);
 
 describe('logger.error', () => {
-
   it('ensures max api exsits', () => {
     expect(MaxAPI).not.toBeUndefined();
   });
@@ -25,6 +26,5 @@ describe('logger.error', () => {
       expect(console.error).toHaveBeenCalledWith(MOCK_ERR_MSG);
       expect(MaxAPI.post).toHaveBeenCalledWith(MOCK_ERR_MSG);
     });
-
   });
 });
