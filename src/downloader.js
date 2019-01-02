@@ -2,13 +2,13 @@ const axios = require('axios');
 const decode = require('audio-decode');
 const Logger = require('./logger');
 
-const fetch = async (url) => {
+const fetch = async url => {
   Logger.log(`downloading audio from ${url}...`);
   const { data } = await axios.get(url, { responseType: 'arraybuffer' });
   return data;
 };
 
-const download = async (url) => {
+const download = async url => {
   try {
     const data = await fetch(url);
     Logger.log('decoding audio');

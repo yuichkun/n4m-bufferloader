@@ -2,7 +2,7 @@ const Logger = require('./logger');
 
 const UNIT_SIZE = 255;
 
-const dumper = async (buf) => {
+const dumper = async buf => {
   const { numberOfChannels } = buf;
   if (numberOfChannels < 1) {
     Logger.error('This audio track does not have more than 1 channels');

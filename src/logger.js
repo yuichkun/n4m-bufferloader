@@ -1,7 +1,7 @@
 const { MaxAPI } = global;
 /* eslint-disable no-console */
 const Logger = {
-  error: (e) => {
+  error: e => {
     MaxAPI.post('An error occured, look in the console to see the details.');
     console.error(e);
     MaxAPI.post(e);

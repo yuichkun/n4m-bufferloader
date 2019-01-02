@@ -18,7 +18,8 @@ describe('logger.error', () => {
     Logger.error(MOCK_ERR_MSG);
 
     it('indicates to the user that an error has occured', () => {
-      const ERR_INDICATOR = 'An error occured, look in the console to see the details.';
+      const ERR_INDICATOR =
+        'An error occured, look in the console to see the details.';
       expect(MaxAPI.post.mock.calls[0][0]).toBe(ERR_INDICATOR);
     });
 

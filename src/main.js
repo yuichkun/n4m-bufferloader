@@ -4,7 +4,7 @@ const Logger = require('./logger');
 
 async function main() {
   try {
-    MaxAPI.addHandler('download', async (url) => {
+    MaxAPI.addHandler('download', async url => {
       this.buf = await download(url);
     });
     MaxAPI.addHandler('write', async () => {
