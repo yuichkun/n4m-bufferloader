@@ -8,6 +8,4 @@ describe('downloader', async () => {
     const data = await fetch(MOCK_SONG_URL);
     expect(data instanceof ArrayBuffer).toBe(true);
   });
-
-
 });
