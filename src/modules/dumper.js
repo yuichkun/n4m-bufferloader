@@ -1,4 +1,5 @@
 const Logger = require('./logger');
+const { DONE } = require('../constants/status');
 
 const UNIT_SIZE = 255;
 
@@ -20,6 +21,7 @@ const dumper = async buf => {
       index += UNIT_SIZE;
     }
   }
+  Logger.log(DONE);
 };
 
 module.exports = dumper;

@@ -2,7 +2,7 @@
 require('../__mocks__/max-api');
 
 const { MaxAPI } = global;
-const Logger = require('../logger');
+const Logger = require('../modules/logger');
 
 Logger.log = jest.fn(Logger.log);
 MaxAPI.post = jest.fn(MaxAPI.post);
