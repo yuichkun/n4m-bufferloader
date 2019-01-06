@@ -1,28 +1,37 @@
-/* eslint-disable no-console */
-require('../__mocks__/max-api');
+require('max-api'); /* eslint-disable-line */
 
 const { MaxAPI } = global;
-const Logger = require('../modules/logger');
+const Logger = require('../modules/Logger');
 
-Logger.log = jest.fn(Logger.log);
-MaxAPI.post = jest.fn(MaxAPI.post);
-console.log = jest.fn(console.log);
+describe('Logger.log', () => {
+  let spiedMaxAPIPost;
+  let spiedConsoleLog;
 
-describe('logger.log', () => {
+  beforeAll(() => {
+    spiedMaxAPIPost = jest.spyOn(MaxAPI, 'post');
+    spiedConsoleLog = jest.spyOn(console, 'log');
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('ensures max api exsits', () => {
     expect(MaxAPI).not.toBeUndefined();
   });
 
-  describe('Logger.log', () => {
+  it('logs with status header', () => {
     const MOCK_LOG = ['ch', 2];
     Logger.log(...MOCK_LOG);
-    it('loggs all messages to the console', () => {
-      expect(console.log.mock.calls[0][0]).toBe('ch');
-      expect(console.log.mock.calls[0][1]).toBe(2);
-    });
-    it('outputs all the messages to Max', () => {
-      expect(MaxAPI.post.mock.calls[0][0]).toBe('ch');
-      expect(MaxAPI.post.mock.calls[0][1]).toBe(2);
-    });
+    expect(spiedConsoleLog.mock.calls[0][0]).toBe('ch');
+    expect(spiedConsoleLog.mock.calls[0][1]).toBe(2);
+    expect(spiedMaxAPIPost.mock.calls[0][0]).toBe('ch');
+    expect(spiedMaxAPIPost.mock.calls[0][1]).toBe(2);
+  });
+
+  it('logs a single argument', () => {
+    const MOCK_LOG = 'This is a single line mock log';
+    Logger.log(MOCK_LOG);
+    expect(spiedConsoleLog.mock.calls[0][0]).toBe(MOCK_LOG);
   });
 });

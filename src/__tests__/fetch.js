@@ -1,5 +1,7 @@
-require('../__mocks__/max-api');
-const { fetch } = require('../modules/fetchAndDecode');
+require('max-api'); /* eslint-disable-line */
+
+const fetch = require('../modules/fetch');
+const { isBuffer } = require('../utils');
 const { DOWNLOAD_FAILED, DATA_NOT_BUFFER } = require('../constants/status');
 
 describe('fetch', () => {
@@ -12,9 +14,7 @@ describe('fetch', () => {
   });
 
   it('fetches audio data as an arraybuffer', async () => {
-    const testDataIsBuffer =
-      testData instanceof ArrayBuffer || testData instanceof Buffer;
-    expect(testDataIsBuffer).toBe(true);
+    expect(isBuffer(testData)).toBe(true);
   });
 
   it('logs error when it fails to fetch', async () => {
